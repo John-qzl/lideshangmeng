@@ -1,0 +1,233 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+<title>利得商盟-微餐单 提现</title>
+<link href="css/wuicon.css" rel="stylesheet" type="text/css">
+<link href="css/bass318.css" rel="stylesheet" type="text/css">
+<link href="css/style418.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="dist/css/swiper.min.css">
+<link href="css/buttons.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/api.css" />
+ <link rel="stylesheet" href="css/checkbix.css">
+</head>
+<script type="text/javascript" src="./script/public.js"></script>
+<script src="js/checkbix.js"></script>
+<script src="js/api.js"></script>
+<script>
+	Checkbix.init();
+  var userid = '';
+  var notice = '';
+  var zuidatixiane = '';
+  var bankCards;
+  apiready = function(){
+  fixStatusBar();//沉浸式效果，支持IOS7及Android4.4及以上
+  getUserID();
+  };
+	Checkbix.init();
+
+  function getUserID() {
+    api.accessNative({
+      name: 'getUserID',
+      extra: ''
+    }, function(ret){
+      userid = ret.userid;
+      checkCard();
+    });
+  }
+
+  function checkCard() {
+    api.ajax({
+    url: 'http://www.lidegou.com/app/index.php?r=user/account/accountraply',
+    method: 'post',
+    data: {
+        values: {
+            uid: userid
+        }
+    }
+    }, function(ret, err) {
+      if (ret) {
+          // api.alert({ msg: JSON.stringify(ret) });
+          if (ret.code == '202') {
+            api.alert({
+               msg: "请添加银行卡"
+             }, function(ret, err) {
+               api.closeWin();
+               gotoAddCard();
+
+             });
+          } else if (ret.code == '201') {
+            api.alert({
+               msg: "提现间隔周期七天"
+             }, function(ret, err) {
+               api.closeWin();
+
+             });
+
+          } else {
+            notice = ret.notice;
+            var banklist = ret.bank;
+            bankCards = banklist;
+            setBankList();
+            var mostMoney = ret.surplus_amount;
+            var tixianjine = document.getElementById('tixianjine');
+            // $api.text(tixianjine, mostMoney);
+            tixianjine.value = mostMoney;
+          }
+
+      } else {
+          api.alert({ msg: "网络请求失败，请稍后再试" });
+      }
+  });
+}
+
+  function gotoAddCard() {
+    api.accessNative({
+      name: 'gotoAddCard',
+      extra: ''
+    }, function(ret){
+    });
+  }
+
+  function setBankList() {
+    var bankSelect = document.getElementById('bankList');
+    var html = '';
+    for (var i = 0; i < bankCards.length; i++) {
+      var card = bankCards[i];
+      html = html + '<option value = "'+ card.id+'">'+card.bank_card +'-'+ card.bank_name+'</option>';
+
+    }
+    $api.html(bankSelect, html);
+  }
+
+  function submitApply() {
+    var bankSelect = document.getElementById('bankList');
+    var index=bankSelect.selectedIndex ;
+    var selectBank = bankSelect.options[index].value;
+    var cardNum = bankCards[index].bank_card;
+
+    var tixiane = document.getElementById('tixianjine').value;
+    var beizhu = document.getElementById("beizhu").value;
+    var kaihuren = document.getElementById('kaihuren').value;
+    // alert(tixiane + "**************" + beizhu + "***********" + cardNum);
+    var tixianNum = parseFloat(tixianNum);
+    if (tixianNum == NaN || tixianNum <= 0) {
+      alert('请输入正确的金额');
+      return;
+    }
+    var zuidaNum = parseFloat(zuidatixiane);
+    if (tixianNum > zuidaNum) {
+      alert('请输入正确的金额');
+      return;
+    }
+
+    api.ajax({
+    url: 'http://www.lidegou.com/app/index.php?r=user/account/account',
+    method: 'post',
+    data: {
+        values: {
+            uid: userid,
+            amount: tixiane,
+            user_note: beizhu,
+            surplus_type: '1',
+            real_name:kaihuren,
+            bank_number:cardNum
+        }
+    }
+}, function(ret, err) {
+  if (ret.code == '201') {
+    api.alert({
+       msg: "请添加银行卡"
+     }, function(ret, err) {
+       api.closeWin();
+       gotoAddCard();
+
+     });
+  }
+    if (ret) {
+        api.alert({
+          msg: '提交申请成功，请耐心等待'
+        }, function(ret1, err1){
+           api.closeWin();
+        });
+    } else {
+        api.alert({ msg: JSON.stringify(err) });
+    }
+});
+
+  }
+
+  function readNotice() {
+    if (notice.length > 0) {
+      api.openWin({
+          name: 'notice',
+          url: 'html/notice.html',
+          pageParam: {
+              name: 'test',
+              content: notice
+          }
+      });
+
+    }
+  }
+</script>
+
+<body class="mhome">
+<div class="wrap">
+		<!-- <div class="universalheader"> 提现
+				<div class="hederleft"><a href="#"><i class="icon xx back_left"></i></a></div>
+		</div>
+		<section class="universalpage"> -->
+      <div id='header'>
+            <div class="back" tapmode="back-active" onclick="api.closeWin()" ></div>
+            <h1>提现</h1>
+            <div class="adpt" ></div>
+        </div>
+
+				<article class="withdrawals">
+						<div class="form-group">
+							<label>提现金额</label>
+							<input type="text" class="inputright form-none" id="tixianjine" placeholder="请输入金额">
+							<span>元</span>
+						</div>
+				</article>
+
+        <article class="withdrawals">
+						<div class="form-group">
+							<label>开户人</label>
+							<input type="text" class="inputright form-none" id="kaihuren" placeholder="请输入姓名">
+						</div>
+				</article>
+
+
+				<article class="withdrawals">
+						<div class="form-group">
+						  <label>会员备注</label>
+							<textarea rows="3"  class="form-none" id="beizhu" placeholder="选填"></textarea>
+						</div>
+				</article>
+
+
+				<article class="withdrawals">
+						<div class="form-group">
+							<label>选择银行</label>
+						<select class="form-none" id="bankList">
+						</select>
+						</div>
+				</article>
+
+
+				<article class="loginbutton">
+				<a href="#" class="button button-block button-rounded button-caution button-large" onclick="submitApply()">提交申请</a>
+				</article>
+
+        <article class="noticebutton">
+				<a href="#" class="button button-block button-rounded" onclick="readNotice()">注意事项</a>
+				</article>
+
+		</section>
+</div>
+</body>
+</html>

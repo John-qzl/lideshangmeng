@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:background="@drawable/shopping_cart_border"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp">
+
+        <ImageView
+            android:id="@+id/iv_select"
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:padding="5dp"
+            android:src="@drawable/automaticlogin01" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="30dp"
+            android:ellipsize="end"
+            android:gravity="center|left"
+            android:maxLines="1"
+            android:textColor="@color/darkslategrey"
+            android:textSize="14sp" />
+
+
+        <TextView
+            android:id="@+id/tvEditor"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/dp_30"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:text="编辑"
+            android:textColor="@color/darkslategrey"
+            android:textSize="14sp"
+            android:visibility="gone" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#f0f0f0"></View>
+
+    <com.lidegou.lideshangmeng.mobile.util.view.LV_M
+        android:id="@+id/list_shopcar_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"></com.lidegou.lideshangmeng.mobile.util.view.LV_M>
+
+
+</LinearLayout>

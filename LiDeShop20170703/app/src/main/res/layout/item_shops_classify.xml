@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_shops_class"
+        android:layout_width="90dp"
+        android:layout_height="30dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@+id/search_history_iv"
+        android:textSize="13sp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:background="@drawable/lin_border"
+        android:layout_centerInParent="true"
+        android:text="阿斯达"
+        android:padding="@dimen/dp_5"
+        />
+
+
+</RelativeLayout>

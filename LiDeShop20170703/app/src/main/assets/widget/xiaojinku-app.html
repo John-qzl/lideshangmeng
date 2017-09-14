@@ -1,0 +1,145 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+<title>利得商盟-微餐单 提现</title>
+<link href="css/wuicon.css" rel="stylesheet" type="text/css">
+<link href="css/bass318.css" rel="stylesheet" type="text/css">
+<link href="css/style418.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="dist/css/swiper.min.css">
+<link href="css/buttons.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="css/api.css" />
+ <link rel="stylesheet" href="css/checkbix.css">
+</head>
+<script type="text/javascript" src="./script/public.js"></script>
+<script src="js/checkbix.js"></script>
+<script src="js/api.js"></script>
+<script>
+
+  var userid = ''
+  apiready = function(){
+  fixStatusBar();//沉浸式效果，支持IOS7及Android4.4及以上
+  getUserID();
+  };
+	Checkbix.init();
+  function closeAPICloud(){
+    api.accessNative({
+      name: 'apicloud',
+      extra: 'closeAPICloud'
+    }, function(ret){
+
+    });
+  }
+
+  function getUserID() {
+    api.accessNative({
+      name: 'getUserID',
+      extra: ''
+    }, function(ret){
+      userid = ret.userid;
+      getMoney();
+    });
+  }
+
+  function getMoney() {
+    api.ajax({
+    url: 'http://www.lidegou.com/app/index.php?r=user/account/exchequer',
+    method: 'post',
+    data: {
+        values: {
+            uid: userid
+        }
+    }
+}, function(ret, err) {
+    if (ret) {
+        // api.alert({ msg: JSON.stringify(ret) });
+
+        var yue = document.getElementById('yue');
+        var jifen = document.getElementById('jifen');
+        if (parseFloat(ret.chest) != NaN && ret.chest != undefined) {
+          $api.text(yue, ret.chest);
+        }
+        if (parseFloat(ret.online_money) != NaN && ret.online_money != undefined) {
+          $api.text(jifen, ret.online_money);
+          // alert(ret.use_money);
+        }
+    } else {
+        // api.alert({ msg: JSON.stringify(err) });
+    }
+});
+  }
+
+  function gotoChongZhi(){
+    api.accessNative({
+      name: 'gotoChongzhi',
+      extra: '1'
+    }, function(ret){
+
+    });
+  }
+
+  function gotoZhangDan(){
+    api.accessNative({
+      name: 'gotoZhangdan',
+      extra: 'zhanghuguanli'
+    }, function(ret){
+
+    });
+  }
+
+</script>
+
+<body class="mhome">
+<div class="wrap">
+		<!-- <div class="universalheader"> 小金库
+				<div class="hederleft"><a href="#"><i class="icon xx back_left"></i></a></div>
+		</div> -->
+
+    <div id='header'>
+          <div class="back" tapmode="back-active" onclick="closeAPICloud()" ></div>
+          <h1>小金库</h1>
+          <div class="adpt" ></div>
+      </div>
+		<!-- <section class="universalpage"> -->
+
+			<div class="jinku_top">
+				<article class="f3">余额（元）</article>
+				<article class="bigfont" id="yue" >0</article>
+        <article class="f3">线上积分：<span id="jifen">0</span></article>
+				</div>
+
+	<div class="uc_menu">
+       <article class="fl line">
+			<div class="ucmenubox" onclick="gotoChongZhi()">
+					<div class="lefticon"><i class="icon xs coffers-recharge"></i></div>
+					<span>充值</span>
+					<div class="righticon"><i class="icon xs back_right"></i></div>
+			</div>
+		</article>
+
+
+	    <article class="fl line">
+			<div class="ucmenubox" onclick="GotoWin('withdrawals.html')">
+					<div class="lefticon"><i class="icon xs coffers-withdraw"></i></div>
+					<span>提现</span>
+					<div class="righticon"><i class="icon xs back_right"></i></div>
+			</div>
+		</article>
+
+
+		<article class="fl">
+			<div class="ucmenubox" onclick="gotoZhangDan()">
+					<div class="lefticon"><i class="icon xs coffers-detail"></i></div>
+					<span>账单明细</span>
+					<div class="righticon"><i class="icon xs back_right"></i></div>
+			</div>
+		</article>
+
+			</div>
+
+		</section>
+</div>
+</body>
+</html>

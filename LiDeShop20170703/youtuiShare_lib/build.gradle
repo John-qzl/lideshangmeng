@@ -1,0 +1,27 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 17
+    buildToolsVersion "24.0.2"
+    aaptOptions {
+        cruncherEnabled = false
+        useNewCruncher = false
+
+    }
+    defaultConfig {
+        minSdkVersion 17
+        targetSdkVersion 24
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+        }
+    }
+
+}
+
+dependencies {
+    compile files('libs/YouTuiSDK_SinaWeiBo.jar')
+}

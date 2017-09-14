@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+<title>利得商盟-微餐单 提现</title>
+<link rel="stylesheet" type="text/css" href="../css/api.css" />
+</head>
+<script type="text/javascript" src="../script/public.js"></script>
+<script src="../js/api.js"></script>
+<script>
+
+  var notice = '';
+
+  apiready = function(){
+    fixStatusBar();//沉浸式效果，支持IOS7及Android4.4及以上
+    var pageParam = api.pageParam;
+    notice = pageParam.content;
+    var main = document.getElementById('main');
+    $api.html(main, notice);
+  };
+
+</script>
+
+<body class="mhome">
+<div class="wrap">
+      <div id='header'>
+            <div class="back" tapmode="back-active" onclick="api.closeWin()" ></div>
+            <h1>注意事项</h1>
+            <div class="adpt" ></div>
+        </div>
+        <div id="main">
+
+        </div>
+</div>
+</body>
+</html>

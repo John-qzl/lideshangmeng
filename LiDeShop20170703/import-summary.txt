@@ -1,0 +1,47 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* .gitignore
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => youtuiShare_lib\src\main\AndroidManifest.xml
+* assets\ => youtuiShare_lib\src\main\assets
+* libs\YoutuiSDK_Core.jar => youtuiShare_lib\libs\YoutuiSDK_Core.jar
+* libs\YoutuiSDK_HttpClient.jar => youtuiShare_lib\libs\YoutuiSDK_HttpClient.jar
+* libs\YoutuiSDK_Point.jar => youtuiShare_lib\libs\YoutuiSDK_Point.jar
+* libs\YoutuiSDK_QQ.jar => youtuiShare_lib\libs\YoutuiSDK_QQ.jar
+* libs\YoutuiSDK_QQMta.jar => youtuiShare_lib\libs\YoutuiSDK_QQMta.jar
+* libs\YoutuiSDK_Renn.jar => youtuiShare_lib\libs\YoutuiSDK_Renn.jar
+* libs\YouTuiSDK_SinaWeiBo.jar => youtuiShare_lib\libs\YouTuiSDK_SinaWeiBo.jar
+* libs\YoutuiSDK_Template.jar => youtuiShare_lib\libs\YoutuiSDK_Template.jar
+* libs\YoutuiSDK_TencentWB.jar => youtuiShare_lib\libs\YoutuiSDK_TencentWB.jar
+* libs\YoutuiSDK_Wechat.jar => youtuiShare_lib\libs\YoutuiSDK_Wechat.jar
+* libs\YoutuiSDK_Yixin.jar => youtuiShare_lib\libs\YoutuiSDK_Yixin.jar
+* proguard-project.txt => youtuiShare_lib\proguard-project.txt
+* res\ => youtuiShare_lib\src\main\res\
+* src\ => youtuiShare_lib\src\main\java
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

@@ -1,0 +1,191 @@
+@charset "utf-8";
+/* CSS Document */
+
+i{ width: 2rem; height: 2rem;
+}
+
+
+.icon{
+    display: inline-block;
+    background-image: url(../img/icon.png);
+}
+.sm{zoom:.3;}
+.xx{zoom:.5;}
+.xs{zoom:.6;}
+.md{zoom:1;}
+.lg{zoom:1.3;}
+
+
+@media screen and (max-width: 320px) {
+.sm{zoom:.2;}
+.xs{zoom:.5;}
+.md{zoom:.8;}
+.lg{zoom:1.1;}
+}
+
+.index-b{ width:50px; height:50px; background-position:-150px 0px;}
+.index-r{ width:50px; height:50px; background-position:-150px -50px;}
+
+.qrcode-b{width:50px; height:50px; background-position:-200px 0px;}
+.qrcode-r{width:50px; height:50px; background-position:-200px -50px;}
+.qrcode-w{width:50px; height:50px; background-position:-200px -100px;}
+.qrcode-blue{width:50px; height:50px; background-position:-200px -150px;}
+.coffers{width:50px; height:50px; background-position:-150px -150px;}
+.wallet-s{width:50px; height:50px; background-position:-250px -150px;}
+
+
+.user-b{width:50px; height:50px; background-position:-250px 0px;}
+.user-r{width:50px; height:50px; background-position:-250px -50px;}
+.user-o{width:50px; height:50px; background-position:-350px 0px;}
+.user-e{width:50px; height:50px; background-position:-350px -100px;}
+.user-go{width:50px; height:50px; background-position:-400px -100px;}
+
+.position-w{width:50px; height:50px; background-position:0px 0px;}
+.position-o{width:50px; height:50px; background-position:0px -50px;}
+.position-r{width:50px; height:50px; background-position:0px -100px;}
+.position-b{width:50px; height:50px; background-position:0px -150px}
+	
+.message-w{width:50px; height:50px; background-position:-50px 0px;}
+.message-r{width:50px; height:50px; background-position:-350px -50px;}
+
+.refresh-b{width:50px; height:50px; background-position:-50px -50px;}
+.refresh-w{width:50px; height:50px; background-position:-50px -100px;}
+
+.search_g{width:50px; height:50px; background-position:-100px 0px;}
+.ticket_r{width:50px; height:50px; background-position:-100px -50px;}
+.delete_g{width:50px; height:50px; background-position:-100px -100px;}
+.camera_o{width:50px; height:50px; background-position:-150px -100px;}
+.camera_b{width:50px; height:50px; background-position:-550px 0px;}
+
+.clock-r{width:50px; height:50px; background-position:-250px -100px;}
+.clock-b{width:50px; height:50px; background-position:-400px -50px;}
+
+.back_left{width:50px; height:50px; background-position:-300px 0px;}
+.back_right{width:50px; height:50px; background-position:-300px -50px;}
+.eye_g{width:50px; height:50px; background-position:-300px -100px;}
+.eye_b{width:50px; height:50px; background-position:-300px -150px;}
+.lock-r{width:50px; height:50px; background-position:-400px 0px;}
+.fit-r{width:50px; height:50px; background-position:-450px 0px;}
+.fit-s{width:50px; height:50px; background-position:-600px -100px;}
+.phone-b{width:50px; height:50px; background-position:-450px -50px;}
+.phone-r{width:50px; height:50px; background-position:-450px -100px;}
+.heart-w{width:50px; height:50px; background-position:-500px 0px;}
+.heart-r{width:50px; height:50px; background-position:-500px -50px;}
+.heart-g{width:50px; height:50px; background-position:-500px -100px;}
+.heart-o{width:50px; height:50px; background-position:-700px 0px;}
+.heart-or{width:50px; height:50px; background-position:-500px -150px;}
+
+
+.file-r{width:50px; height:50px; background-position:-600px 0px;}
+.shop-r{width:50px; height:50px; background-position:-600px -50px;}
+
+.norms-out{width:50px; height:50px; background-position:0px -300px;} 
+.norms-add{width:50px; height:50px; background-position:-50px -300px;}
+
+.num-out{width:50px; height:50px; background-position:0px -350px;} 
+.num-add{width:50px; height:50px; background-position:-50px -350px;}
+
+
+
+.star-r{width:50px; height:50px; background-position:-650px 0px;}
+.star-y{width:50px; height:50px; background-position:-650px -50px;}
+.meal-r{width:50px; height:50px; background-position:-650px -100px;}
+.edit-b{width:50px; height:50px; background-position:-700px -50px;}
+.tag-r{width:50px; height:50px; background-position:-750px 0px;}
+.headset-r{width:50px; height:50px; background-position:-800px 0px;}
+.share-r{width:50px; height:50px; background-position:-850px 0px;}
+.share-w{width:50px; height:50px; background-position:-850px -50px;}
+.share-b{width:50px; height:50px; background-position:-850px -100px;}
+.clear-r{width:50px; height:50px; background-position:-900px 0px;}
+.up-r{width:50px; height:50px; background-position:-950px 0px;}
+
+
+.alipay{width:50px; height:50px; background-position:0px -250px;}
+.weixinpay{width:50px; height:50px; background-position:-50px -250px;}
+.tlpay{width:50px; height:50px; background-position:-100px -250px;}
+
+
+.weixin-round{width:100px; height:100px; background-position:0px -600px;}
+.pengyouquan-round{width:100px; height:100px; background-position:-100px -600px;}
+.weibo-round{width:100px; height:100px; background-position:-200px -600px;}
+.qq-round{width:100px; height:100px; background-position:-300px -600px;}
+.qzone-round{width:100px; height:100px; background-position:-400px -600px;}
+.tel-round{width:100px; height:100px; background-position:-500px -600px;}
+.file-round{width:100px; height:100px; background-position:-500px -700px;}
+.clock-round{width:100px; height:100px; background-position:-700px -700px;}
+.figure-empty{width:100px; height:100px; background-position:-600px -600px;}
+.figure-serve{width:100px; height:100px; background-position:-700px -600px;}
+
+.clock-o-r{width:100px; height:100px; background-position:0px -700px;}
+.wallet-o-r{width:100px; height:100px; background-position:-100px -700px;}
+.mutual-o-r{width:100px; height:100px; background-position:-200px -700px;}
+.fit-o-r{width:100px; height:100px; background-position:-300px -700px;}
+.order-o-r{width:100px; height:100px; background-position:-400px -700px;}
+.updown-o-r{width:100px; height:100px; background-position:-500px -700px;}
+
+
+
+
+
+.icoshopping-cart-b{width:100px; height:100px; background-position:-900px -900px;}
+
+.iconav01{width:100px; height:100px; background-position:0px -800px;}
+.iconav02{width:100px; height:100px; background-position:-100px -800px;}
+.iconav03{width:100px; height:100px; background-position:-200px -800px;}
+.iconav04{width:100px; height:100px; background-position:-300px -800px;}
+.iconav05{width:100px; height:100px; background-position:-400px -800px;}
+.iconav06{width:100px; height:100px; background-position:-500px -800px;}
+.iconav07{width:100px; height:100px; background-position:-600px -800px;}
+.iconav08{width:100px; height:100px; background-position:-700px -800px;}
+.iconav09{width:100px; height:100px; background-position:-800px -800px;}
+.iconav10{width:100px; height:100px; background-position:-900px -800px;}
+.iconav11{width:100px; height:100px; background-position:0px -900px;}
+.iconav12{width:100px; height:100px; background-position:-100px -900px;}
+.iconav13{width:100px; height:100px; background-position:-200px -900px;}
+
+
+
+.profit-w{ width:50px; height:50px; background-position:-150px -300px; } 
+.profit-b{ width:50px; height:50px; background-position:-150px -350px; } 
+
+.fans-w{width:50px; height:50px; background-position:-200px -300px;}
+.fans-b{width:50px; height:50px; background-position:-200px -350px;}
+.partake{width:50px; height:50px; background-position:-250px -300px;} 
+.commonweal{width:50px; height:50px; background-position:-250px -350px;}
+.talk_big{width:50px; height:50px; background-position:-300px -300px;}
+.talk_sml{width:50px; height:50px; background-position:-300px -350px;}
+.talk_sml_red{width:50px; height:50px; background-position:-300px -400px;}
+
+.truck{width:50px; height:50px; background-position:-350px -300px; }
+.write{width:50px; height:50px; background-position:-350px -350px;}
+.identity{width:50px; height:50px; background-position:-350px -400px;}
+.cargo{width:50px; height:50px; background-position:-400px -300px;}
+.file-b{width:50px; height:50px; background-position:-400px -350px;}
+
+
+.coin{width:50px; height:50px; background-position:-400px -400px;}
+.like{width:50px; height:50px; background-position:-450px -300px;}
+.like-r{width:50px; height:50px; background-position:-450px -350px;}
+.seniority{width:50px; height:50px; background-position:-450px -400px;}
+
+.handset{width:50px; height:50px; background-position:-500px -300px;}
+.mail{width:50px; height:50px; background-position:-500px -350px;}
+.lock-g{width:50px; height:50px; background-position:-500px -400px;}
+.minus{width:50px; height:50px; background-position:-50px -150px;}
+.rmb{ width:50px; height:50px; background-position:-100px -150px;}
+
+.footmark{width:50px; height:50px; background-position:-550px -150px;}
+
+.uc01{width:50px; height:50px; background-position:0px -450px; }
+.uc02{width:50px; height:50px; background-position:-50px -450px; }
+.uc03{width:50px; height:50px; background-position:-100px -450px; }
+.uc04{width:50px; height:50px; background-position:-150px -450px; }
+.uc05{width:50px; height:50px; background-position:-200px -450px; }
+.uc06{width:50px; height:50px; background-position:-250px -450px; }
+.uc07{width:50px; height:50px; background-position:-300px -450px; }
+
+
+.coffers-recharge{width:50px; height:50px; background-position:-200px -250px; }
+.coffers-withdraw{width:50px; height:50px; background-position:-250px -250px; }
+.coffers-detail{width:50px; height:50px; background-position:-300px -250px; }
+.setup{width:50px; height:50px; background-position:-800px -50px;}

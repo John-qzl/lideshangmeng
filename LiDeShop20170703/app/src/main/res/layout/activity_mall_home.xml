@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.lidegou.lideshangmeng.mobile.util.view.TabViewPager
+        android:id="@+id/tab_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"></com.lidegou.lideshangmeng.mobile.util.view.TabViewPager>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/gainsboro">
+
+    </View>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/home_bottom_layout_border">
+
+        <LinearLayout
+            android:id="@+id/ll_home_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_home_bottom_home"
+                android:layout_width="32dp"
+                android:layout_height="40dp"
+                android:background="@drawable/home02"
+                android:layout_marginTop="1dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_home_classify"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_home_bottom_classify"
+                android:layout_width="32dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="1dp"
+                android:background="@drawable/classify01" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_home_storestreet"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_home_bottom_storestreet"
+                android:layout_width="32dp"
+                android:layout_height="40dp"
+                android:background="@drawable/storestreet01"
+                android:layout_marginTop="@dimen/dp_1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_home_shopcar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_home_bottom_shopcar"
+                android:layout_width="32dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@drawable/shopcar01"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_home_mine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/img_home_bottom_mine"
+                android:layout_width="32dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/dp_1"
+                android:background="@drawable/mine01" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
